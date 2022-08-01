@@ -38,11 +38,11 @@
                         <h3 class="feature-title">If Statements</h3>
                         <p> If statements in python are used to check if a particular condition is true and perform a specified action if so. The python format for an if statement is:</p>
                         <p><strong>if CONDITION<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;DO_THING_HERE</strong></p>
+                        &emsp;DO_THING_HERE</strong></p>
                         <p>For example:</p>
                         <p><strong>x = 5 <br>
                             if x == 5: <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;print(“Yes”)<br>
+                            &emsp;print(“Yes”)<br>
                         </strong></p>
                     <p><strong>Note:</strong><br>
                         a)<strong>=</strong> is for variable assignment while <strong>==</strong> is to check if things are equivalent to each other <br>
@@ -53,16 +53,16 @@
                     <div class="section">
                     <p>If statements can also include actions if the condition is false by using the else keyword directly under. The python format for the if-else statement is:</p>
                     <p><strong>if CONDITION:<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;DO_THING_HERE<br>
+                        &emsp;DO_THING_HERE<br>
                         else:<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;DO_OTHER_THING_HERE
+                        &emsp;DO_OTHER_THING_HERE
                         </strong></p>
                         <p>For example:<br>
                             <strong>x = 3<br>
                             if x != 5:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;print(“Yes”)<br>
+                            &emsp;print(“Yes”)<br>
                             else:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;print(“No”)<br>
+                            &emsp;print(“No”)<br>
                             </strong></p>
                         <p>In the if-else statement above if x is not equal to 5 it prints the string “Yes” otherwise it prints “No”. When this code is run “Yes” will be printed as x is 3 not 5.</p>
                 </div>
@@ -70,12 +70,12 @@
                         <h3 class="feature-title">For loops</h3>
                         <p>Sometimes when we code we want to easily go through a list or string or other types. We can do this by using a for or while loop. Today we are focusing on the use of a for loop to go (or loop) through the elements of lists. We can perform tasks/actions everytime we go through the loop. The python format for a for loop is:</p>
                         <p><strong>for ELEMENT in ANY_LIST:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;DO_THING_HERE<br></p></strong></p>
+                            &emsp;DO_THING_HERE<br></p></strong></p>
                         <p><strong>Note: </strong><br> <strong>ELEMENT</strong> is a variable name used to indicate the current list element everytime it goes through the loop.</p>
                         <p>For example: <br>
                            <strong> lst = [1,2,3,4]<br>
                             for elem in lst:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;print(elem)</strong><br>
+                            &emsp;print(elem)</strong><br>
                             The loop above would loop 4 times because there are 4 elements in lst. In the first loop elem is 1 and 1 would be printed. The program would then know to go back to the top of the loop and make elem be 2 as that is the 2nd element and print 2. The third and fourth loop would make elem 3 and 4 respectively and print 3 and 4 respectively. 
                             </p>
                     </div>  
@@ -85,10 +85,10 @@
                             </p>
                         <p><strong>num_lst = [2,4,6,8] <br>
                             for elem in num_lst:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;if elem > 5:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(elem,"is greater than 5")<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(elem,"is not greater than 5")<br>
+                            &emsp;if elem > 5:<br>
+                            &emsp;&emsp;print(elem,"is greater than 5")<br>
+                            &emsp;else:<br>
+                            &emsp;&emsp;print(elem,"is not greater than 5")<br>
                             </strong><br></p>
                         <p>The loop above compares the current element to 5 to see which is greater. It prints “2 is not greater than 5” on the first loop as 2 is less tha 5. On the third loop however since 6 greater than 5 it prints “6 is greater than 5”</p>
                         
@@ -96,19 +96,24 @@
                     </div>  
                 </div>
         <div class="col-4">
-            <div class="lesson-question">
+            <div class="section">
+                <br>
                 <h5 class="feature-title">Question 1: Think of a kind activity (eg. hugging, kissing, making dinner). Make it into a string (use “ ”) and assign it to the variable kind. We have created a variable named unkind assigned to (one of the following, based on category) [“deforestation”, “spoiled sport”, “endangered species”, “hunger”]</h5>
                 <div class="form-group">
                     <textarea class="form-control" rows="2"></textarea>
                 </div>
                 <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+            </div>
+            <p><br><br><br><br></p>
+                <div class="section">
                 <h5 class="feature-title">Question 2: Given the list lst = [dog, dog, dog, dog, dog, dog] (items based on category) Write an if statement that prints “Congrats!” if you have more than or equal to five dogs/goals/trees/donuts, otherwise it prints “Boo!”. Hint: len(lst) gives you the number of elements in the list lst.</h5>
                 <div class="form-group">
                     <textarea class="form-control" rows="2"></textarea>
                 </div>
                 <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
             </div>
-            <div class="lesson-question">
+            <p><br><br><br><br></p>
+            <div class="section">
                 <h5 class="feature-title">Question 3: How many times does the following loop run?</h5>
                 <p>lst = [“help”, “the”, “earth”]<br>
                     for elem in lst:<br>
@@ -118,14 +123,19 @@
                     <textarea class="form-control" rows="2"></textarea>
                 </div>
             <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
-            <h5 class="feature-title">Question 5: Write code that uses a for loop to print the donation amounts greater than 10 in the list otherwise print “A minimum of 10 required.”:</h5>
+        </div>
+        <p><br><br><br><br><br></p>
+
+            <div class="section"></div>
+            <h5 class="feature-title">Question 4: Write code that uses a for loop to print the donation amounts greater than 10 in the list otherwise print “A minimum of 10 required.”:</h5>
                 <p>donation = [500, 3, 20, 20000, 9]</p>
                 <div class="form-group">
                     <textarea class="form-control" rows="2"></textarea>
                 </div>
                 <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
-        </div>
+       
         <button type="button" class="btn btn-link">Next Lesson</button>
+    </div>
         </div>
     </body>
         
