@@ -148,16 +148,20 @@ func quiz(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("sport: ", sport, " nature: ", nature, " animal: ", animal, " food: ", food)
 		if sport > nature && sport > animal && sport > food {
 			fmt.Println("Max sport")
-			http.Redirect(w, r, "/sport", http.StatusFound)
+			http.Redirect(w, r, "/index", http.StatusFound)
 			// sport(w,r)
 		} else if nature > sport && nature > food && nature > animal {
 			fmt.Println("Max nature")
+			http.Redirect(w, r, "/index", http.StatusFound)
 		} else if food > nature && food > animal && food > sport {
 			fmt.Println("Max food")
+			http.Redirect(w, r, "/index", http.StatusFound)
 		} else if animal > sport && animal > food && animal > nature {
 			fmt.Println("Max animal")
+			http.Redirect(w, r, "/index", http.StatusFound)
 		} else {
 			fmt.Println("error")
+			http.Redirect(w, r, "/index", http.StatusFound)
 		}
 	}
 	html := `<!DOCTYPE html>
@@ -181,11 +185,21 @@ func sport(w http.ResponseWriter, r *http.Request) {
 </html>`
 	w.Write([]byte(html))
 }
+
+// func index(w http.ResponseWriter, r *http.Request) {
+// 	html := index.html(r)
+
+// }
+
+func tmp(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("here")
+}
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", SimpleSelectTag)
 	mux.HandleFunc("/quiz", quiz)
-	mux.HandleFunc("/sport", sport)
+	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
+	//mux.HandleFunc("/index", tmp)
 
 	http.ListenAndServe(":8080", mux)
 }

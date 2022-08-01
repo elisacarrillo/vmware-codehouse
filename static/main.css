@@ -1,0 +1,65 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #f2f6e9;
+}
+h4{
+    margin-top: 20px;
+}
+h3{
+    margin-top: 50px;
+}
+
+.navbar {
+    background: darkblue;
+    margin-bottom: 50px;
+}
+.nav-link,
+.navbar-brand {
+    color: #fff;
+    cursor: pointer;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: #000;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+.features .form-control,
+.features input {
+	border-radius: 0;
+}
+.features .btn {
+    background-color: #589b37;
+    border: 1px solid #589b37;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.btn-link{
+    background-color: blue;
+    border: blue;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+}
+.features .btn:hover {
+    background-color: #333;
+    border: 1px solid #333;
+}
+.lesson{
+    margin-bottom: 300px;
+
+}
+.lesson-question{
+    margin-bottom: 150px;
+
+}
+
+.col-4{
+    margin-top: 80px;
+}
