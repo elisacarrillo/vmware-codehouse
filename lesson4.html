@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Code for Change</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+	<body>
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="#">VM-Innovators</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Charities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container features">
+            <div class="row">
+                <div class="col-8">
+                    <div class="lesson4">
+                        <h2 class="feature-title">Lesson 4: Classes</h2>
+                        <h3 class="feature-title">Classes Overview</h3>
+                        <p> Classes are the blueprint that allow us to bundle functions and other pieces of code together. 
+                            Just like how functions allow us to reuse code, classes let us reuse methods in different scenarios. </p>
+                        <p> For example, let's take people. People have common characteristics, such as a name and age. <em>Name</em> and <em>age</em>would be the properties, 
+                        and <em>People</em> would be the class, since it is shared across all people. To create a class, we need to use the class keyword, and set up a 
+                        special method called __init__. This is our “starter” method, where our properties <em>name</em> and <em>age</em> can be set up. A class in Python will look 
+                        something like this: </p>
+                        <p><strong>	class Person: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; def __init__(self, name, age): <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    self.name = name <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    self.age = age
+                        </strong></p>
+                        <p>You may be wondering what the <em>self</em> keyword is. This is the first parameter required in any __init__ method, and will allow us to link the class
+                        to the properties to use later (the word doesn't have to be “self” exactly, but it's easiest to use). Before we move any further, let's test your 
+                        understanding on classes and the __init__ method.</p>
+                    </div>
+                    <div class="lesson4">
+                        <h3 class="feature-title">Objects</h3>
+                        <p> Another great use of classes is that they allow us to make objects, which is an instance of a class. For our example if <em>Person</em> is the Class, 
+                            <em>Jack</em> would be an object. Jack is a person, not the other way around, which is why naming is especially important in object-oriented programming.</p>
+                            <img src="jack.png" alt="Diagram, showing a class called Person pointing to the object called Jack to highight that Jack is a Person" style="width:100%;">
+
+                        </div>  
+                    <div class="lesson4">
+                        <h3 class="feature-title">Declaring Objects</h3>
+                        <p> Below is the previously-created class, along with a <em>print_name</em> method to print the name of the person. Notice that the “self” keyword is 
+                            still a required parameter to print the object property.</p>
+                        <p><strong>	class Person: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; def __init__(self, name, age): <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    self.name = name <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    self.age = age <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; def print_name(self): <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    print(self.name) <br>                    
+                        </strong></p>
+                        <p>To declare an object for this class, we create a variable as normal, and supply the required parameters to this variable.</p>
+                        <p> <strong> Person(“Jack”, 20) </strong> </p>
+                        <p>Now Jack is created as an object, which is an instance of the Person class! To call the <em>print_name</em> method we first use the variable name
+                        “jack” then use the dot operator “.” to reference the method name. Note that we don't need to pass in “self” to the methods, this is only used 
+                        within the function declaration. </p>
+                        <p> <strong> jack.print_name() </strong></p>
+
+                    </div>  
+                    <div class="lesson">
+                        <h3 class="feature-title">Review!</h3>
+                        <p> Now, let's put it all together! </p>
+                    </div>  
+                </div>
+        <div class="col-4">
+            <div class="lesson-question">
+                <h5 class="feature-title">Question 1: Create a new class called [category], that takes in your name as a parameter and sets it equal to self.name.</h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Submit" name=""><br><br><br><br><br><br><br><br><br><br>
+                <h5 class="feature-title">Question 2: True or False: <em>Panda</em> is the Class, and <em>Animal</em> is the Object.</h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+            </div><br><br><br><br><br><br><br><br><br>
+            <div class="lesson-question">
+                <h5 class="feature-title">Question 3: There is a object <em>State</em> created for the function below. Create a function call, using the proper function calling procedure for objects.<br>
+                    <br>def counter(num):
+                    <br>&nbsp; &nbsp; return num + 1
+               </h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+            <input type="submit" class="btn btn-secondary btn-block" value="Submit" name=""><br><br><br><br><br><br><br><br>
+            <h5 class="feature-title">Question 4: Create a class of your choice, with an initialization method, additional method of your choosing, and object declaration + function calls</h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+        </div>
+        <button type="button" class="btn btn-link">Next Lesson</button>
+        </div>
+    </body>
+        
+	
+</html>
