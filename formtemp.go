@@ -1,3 +1,5 @@
+
+
 package main
 
 import (
@@ -6,7 +8,7 @@ import (
 	"strings"
 )
 
-func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
+func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 	html := `<!DOCTYPE html>
 	<html>
 	<head> 
@@ -19,9 +21,10 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 		  #page
 		  {
 		    border: 1px solid white;
-		    width: 900px;
-		    height: 900px;
+		    width: 1175px;
+		    height: 600px;
 			padding: 20px;
+			background-color: #fffff0;
 		  }
 
 		  #form1
@@ -29,6 +32,7 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 			padding: 5px;
 			font-size:120%;
 			font-family:'Trebuchet MS', sans-serif;
+			background-color: #f5f5dc;
 		  }
 		  #headr
 		  {
@@ -46,6 +50,7 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>	
 	   <body>
+		  <div style="background-color=#00008b;">
 			<nav class="navbar navbar-expand-md">
 			<a class="navbar-brand" href="#">VM-Innovators</a>
 			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -65,6 +70,7 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 				</ul>
 			</div>
 			</nav>
+		  </div>
 		  <header>
 		  	<div id="headr">
 		 		<p>Personality Quiz!</p> 
@@ -104,6 +110,7 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 		  <div id="page">
 		  	<div id="form1">
 				<form action="/quiz" method="post">
+			 		<div id="question1" style="background-color: #4b8e23;">
 					<p onclick="speak('What sounds the most fun to you?');">1. What sounds the most fun to you?</p>
 					<select id="q1" name="q1" onclick = "speakChoices(1)" )>
 						<option id = "petting_zoo" value="Going to the petting zoo">Going to a petting zoo
@@ -111,7 +118,8 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 						<option id = "soccer" value="Playing soccer with your friends">Playing soccer with your friends</option>
 						<option id="hike" value = "Taking a hike">Taking a hike</option>
 						<option id="eating_out" value="Eating out with friends">Eating out with friends</option>
-					</select> <p><br></p>
+					</select>  <p><br></p> </div>
+					<div id="question1" style="background-color: #5cab53;">
 					<p onclick="speak('What would people describe you as?')">2. What would people describe you as?</p>
 					<select id = "q2" name = "q2" onclick = "speakChoices(2)" >
 						<option id="animal_lover" value = "Animal Lover" >Animal Lover
@@ -119,16 +127,17 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 						<option id="athlete" value = "athlete">Athlete</option>
 						<option id="nature_lover" value="Nature Lover">Nature Lover</option>
 						<option id="foodie" value="foodie">Foodie</option>
-					</select><p><br></p>
-					<p onclick="speak('What do you associate the color orange with?')">3. What do you associate the color orange with?
-					</p>
+					</select><p><br></p> </div>
+					<div id="question1" style="background-color: #7fbc6f;">
+					<p onclick="speak('What do you associate the color orange with?')">3. What do you associate the color orange with?</p>
 					<select id = "q3" name = "q3" onclick = "speakChoices(3)" >
 						<option id="fox" value="fox">Fox
 						</option>
 						<option id = "basketball" value="basketball">Basketball</option>
 						<option id="leaves" value="fall leaves">Fall Leaves</option>
 						<option id="fruit" value="Orange Fruit">Orange Fruit</option>
-					</select><p><br></p>
+					</select><p><br></p> </div>
+					<div id="question1" style="background-color: #a4d4a3;">
 					<p onclick="speak('Would you rather spend your day inside or outside?')">4. Would you rather spend your day inside or outside?
 					</p>
 					<select id = "q4" name="q4" onclick = "speakChoices(4)" >
@@ -136,7 +145,7 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 						<option id = "outside" value="outside">Outside</option>
 					</select>
 					<p></p>
-					<input onclick="speak('submit')" type = "submit" value = "submit">
+					<input onclick="speak('submit')" type = "submit" value = "submit"></div>
 				</form>
 			</div>
 		  </div> 
@@ -148,7 +157,7 @@ func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func quiz2(w http.ResponseWriter, r *http.Request) {
+func quiz(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("here")
 
 	fmt.Println("method: ", r.Method)
@@ -233,7 +242,7 @@ func quiz2(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(html))
 }
 
-func sport2(w http.ResponseWriter, r *http.Request) {
+func sport(w http.ResponseWriter, r *http.Request) {
 	html := `<!DOCTYPE html>
 <html>
 <body>
@@ -248,13 +257,13 @@ func sport2(w http.ResponseWriter, r *http.Request) {
 
 // }
 
-func tmp2(w http.ResponseWriter, r *http.Request) {
+func tmp(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("here")
 }
-func main2() {
+func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", SimpleSelectTag2)
-	mux.HandleFunc("/quiz", quiz2)
+	mux.HandleFunc("/", SimpleSelectTag)
+	mux.HandleFunc("/quiz", quiz)
 	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
 	//mux.HandleFunc("/index", tmp)
 
