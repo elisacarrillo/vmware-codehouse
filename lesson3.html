@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Code for Change</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+	<body>
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="#">VM-Innovators</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Charities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container features">
+            <div class="row">
+                <div class="col-8">
+                    <div class="lesson">
+                        <h2 class="feature-title">Lesson 3: Functions</h2>
+                        <h3 class="feature-title">__3a__</h3>
+			<p>Function Overview: A function is a block of code grouped together that runs only when directly called. Functions can do a number of tasks, and at the end we typically return data or print data, however this is optional. The format of a typical function is: </p>
+                        <p><strong>def function_name():</strong>
+                        <br><strong>&emsp;print(“Something is printed”)</strong>
+                        <br><strong>&emsp;return(“Something is returned”)</strong></p>
+                    </div>
+                    <div class="lesson">
+                        <h3 class="feature-title">__3b__</h3>
+                        <p>Parameters: Functions typically take in data, called parameters, that can change the result of the code, although parameters are optional. Here’s an example of a function with a parameter name:</p>
+                        <p><strong>def hello_name(name):</strong>
+                        <br><strong>&emsp;print(“Hello, “ + name)</strong></p>
+                        <p>The function  will print a different line based on what is passed in as the parameter. If we passed in “Jack”, it will print “Hello, Jack”, while for variable “Stacy”, it will print “Hello, Stacy”. This is a benefit of functions, as we can reuse the same code and modify it to fit whatever purpose we want based on the parameter.</p>
+                    </div>  
+                    <div class="lesson">
+                        <h3 class="feature-title">__3c__</h3>
+                        <p>Calling a Function: Another thing to note is that we must call the function in order for it to run. For our earlier function hello_name, if we ran the code currently, nothing would happen! However, if we did this:</p>
+			<p><strong>hello_name("Jack")</strong></p>
+			<p>Then our desired “Hello, Jack” line will print! (Note: for functions with no parameters, you can simply add empty parentheses “()” just like the function declaration).</p>
+                    </div>
+                    <div class="lesson">
+                        <h3 class="feature-title">__3d__</h3>
+			<p>Review: Now let’s throw this info together, along with testing your knowledge of the past lessons!</p>
+                    </div>
+                </div>
+        <div class="col-4">
+            <div class="lesson-question">
+                <h5 class="feature-title">Question 1: Create a function called hello_world that prints “Hello World!”</h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+               </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+                <br>
+		<br> 
+                <h5 class="feature-title">Question 2: Create a function called favorite [category] that takes in a variable called fav and prints it</h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+            </div>
+            <div class="lesson-question">
+		<br>
+		<br>
+                <h5 class="feature-title">Question 3: Write a function call for your above function, passing in your favorite [category]</h5>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+            <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+		<br>
+		<br>
+            <h5 class="feature-title">Question 4: Create a function check_time, that takes in a variable called “time”. Within the function,</h5>
+            <p>- Create a variable currentTime and set it equal to the parameter
+	    <br>- Create an if-statement that checks whether the time is 6pm or later; if so, print “Dessert time!”. If not, print “Not dessert time :(“
+	    <br>Call the function with “5” being supplied</p>
+                <div class="form-group">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Submit" name="">
+        </div>
+        <button type="button" class="btn btn-link">Next Lesson</button>
+        </div>
+    </body>
+        
+	
+</html>
