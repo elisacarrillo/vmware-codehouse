@@ -8,11 +8,8 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"text/template"
 )
-
-func main() {
-	charity_finder("animals")
-}
 
 func charity_finder(c string) {
 	var default_sports Return_Charity
@@ -74,6 +71,7 @@ func charity_finder(c string) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
@@ -113,7 +111,19 @@ func charity_finder(c string) {
 			selected_charity = default_food
 		}
 	}
-	fmt.Println(selected_charity)
+	charityHTML, err :=  template.ParseFiles("charities.html") 
+	if err != nil {
+		log.Fatal(err)
+	}
+	type HTML_Charity struct{
+		c Return_Charity
+	}
+	var charity HTML_Charity
+	charity.c= selected_charity
+	err = charityHTML.Execute(os.Stdout, &charity)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 type Response struct {
