@@ -9,8 +9,71 @@ import (
 func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 	html := `<!DOCTYPE html>
 <html>
+<head> 
+<title>Code for Change</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="main.css">
+	<style> 
+	#page
+	{
+		border: 1px solid white;
+		width: 1175px;
+		height: 600px;
+		padding: 20px;
+		background-color: #fffff0;
+	}
 
-<body>
+	#form1
+		  {
+			padding: 5px;
+			font-size:120%;
+			font-family:'Trebuchet MS', sans-serif;
+			background-color: #f5f5dc;
+		  }
+		  #headr
+		  {
+			border: 4px solid navy;
+			border-radius: 10px;
+			box-shadow: 10px #C0C0C0;
+			text-align: center;
+			color:white;
+			font-size:300%;
+			font-family: Verdana, sans-serif;
+			background-color: #000080;
+		  }
+		</style>
+	</head>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>	
+	   <body>
+		  <div style="background-color=#00008b;">
+			<nav class="navbar navbar-expand-md">
+			<a class="navbar-brand" href="#">VM-Innovators</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="main-navigation">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Quiz</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Charities</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+				</ul>
+			</div>
+			</nav>
+		  </div>
+		  <header>
+		  	<div id="headr">
+		 		<p>Personality Quiz!</p> 
+			</div> 
+		  </header>
 	<script>
 	function speak(words){
 		// console.log("working");
@@ -43,8 +106,10 @@ func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 	}
 	</script>
 
-
-	<form action="/quiz" method="post">
+	<div id="page">
+	  <div id="form1">
+	    <form action="/quiz" method="post">
+	    	<div id="question1" style="background-color: #4b8e23;">
 		<p onclick="speak('What sounds the most fun to you?');">What sounds the most fun to you?</p>
 		
 		<select id="q1" name="q1" onclick = "speakChoices(1)" )>
@@ -53,7 +118,8 @@ func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 		<option id = "soccer" value="Playing soccer with your friends">Playing soccer with your friends</option>
 		<option id="hike" value = "Taking a hike">Taking a hike</option>
 		<option id="eating_out" value="Eating out with friends">Eating out with friends</option>
-		</select>
+		</select> <p><br></p> </div>
+		<div id="question1" style="background-color: #5cab53;">
 		<p onclick="speak('What would people describe you as?')">What would people describe you as?</p>
 		<select id = "q2" name = "q2" onclick = "speakChoices(2)" >
 		<option id="animal_lover" value = "Animal Lover" >Animal Lover
@@ -61,7 +127,8 @@ func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 		<option id="athlete" value = "athlete">Athlete</option>
 		<option id="nature_lover" value="Nature Lover">Nature Lover</option>
 		<option id="foodie" value="foodie">Foodie</option>
-		</select>
+		</select> <p><br></p> </div>
+		<div id="question1" style="background-color: #7fbc6f;">
 		<p onclick="speak('What do you associate the color orange with?')">What do you associate the color orange with?
 		</p>
 		<select id = "q3" name = "q3" onclick = "speakChoices(3)" >
@@ -70,17 +137,20 @@ func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 		<option id = "basketball" value="basketball">Basketball</option>
 		<option id="leaves" value="fall leaves">Fall Leaves</option>
 		<option id="fruit" value="Orange Fruit">Orange Fruit</option>
-		</select>
+		</select> <p><br></p> </div>
+		<div id="question1" style="background-color: #a4d4a3;">
 		<p onclick="speak('Would you rather spend your day inside or outside?')">Would you rather spend your day inside or outside?
 		</p>
 		<select id = "q4" name="q4" onclick = "speakChoices(4)" >
 
 		<option id="inside" value="inside">Inside</option>
 		<option id = "outside" value="outside">Outside</option>
-		</select>
+		</select> <p><br></p> </div>
 		<p></p>
 		<input onclick="speak('submit')" type = "submit" value = "submit">
-	</form>
+	    </form>
+	  </div>
+	</div>
 	<div id="audio"></div>
 </body>
 </html>`
