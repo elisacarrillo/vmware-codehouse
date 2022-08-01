@@ -256,8 +256,10 @@ func main() {
 	mux.HandleFunc("/quiz", quiz)
 
 	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
-	charity_finder("")
-	mux.HandleFunc("/output", output)
+
+	mux.Handle("/output/", http.StripPrefix("/output/", http.FileServer(http.Dir("./charity"))))
+	// charity_finder("")
+	// mux.HandleFunc("/output", output)
 	// mux.HandleFunc("/index", tmp)
 	http.ListenAndServe(":8080", mux)
 
