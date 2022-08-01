@@ -90,6 +90,8 @@ func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 }
 
 func quiz(w http.ResponseWriter, r *http.Request) {
+
+	
 	fmt.Println("here")
 
 	fmt.Println("method: ", r.Method)
@@ -164,27 +166,10 @@ func quiz(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/index", http.StatusFound)
 		}
 	}
-	html := `<!DOCTYPE html>
-	<html>
-	<body>
-		<p>Quiz Results Proccessing...</p>
-	</body>
-	</html>`
-
-	w.Write([]byte(html))
+	
 }
 
-func sport(w http.ResponseWriter, r *http.Request) {
-	html := `<!DOCTYPE html>
-<html>
-<body>
 
-<p> sports </p>
-
-</body>
-</html>`
-	w.Write([]byte(html))
-}
 
 // func index(w http.ResponseWriter, r *http.Request) {
 // 	html := index.html(r)
@@ -201,8 +186,8 @@ func main() {
 	mux.HandleFunc("/quiz", quiz)
 
 	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
-	// charity_finder("")
-	// mux.HandleFunc("/output", output)
+	charity_finder("")
+	mux.HandleFunc("/output", output)
 	// mux.HandleFunc("/index", tmp)
 	http.ListenAndServe(":8080", mux)
 

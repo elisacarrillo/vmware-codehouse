@@ -1,5 +1,3 @@
-
-
 package main
 
 import (
@@ -8,7 +6,7 @@ import (
 	"strings"
 )
 
-func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
+func SimpleSelectTag2(w http.ResponseWriter, r *http.Request) {
 	html := `<!DOCTYPE html>
 	<html>
 	<head> 
@@ -150,7 +148,7 @@ func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func quiz(w http.ResponseWriter, r *http.Request) {
+func quiz2(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("here")
 
 	fmt.Println("method: ", r.Method)
@@ -235,7 +233,7 @@ func quiz(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(html))
 }
 
-func sport(w http.ResponseWriter, r *http.Request) {
+func sport2(w http.ResponseWriter, r *http.Request) {
 	html := `<!DOCTYPE html>
 <html>
 <body>
@@ -250,13 +248,13 @@ func sport(w http.ResponseWriter, r *http.Request) {
 
 // }
 
-func tmp(w http.ResponseWriter, r *http.Request) {
+func tmp2(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("here")
 }
-func main() {
+func main2() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", SimpleSelectTag)
-	mux.HandleFunc("/quiz", quiz)
+	mux.HandleFunc("/", SimpleSelectTag2)
+	mux.HandleFunc("/quiz", quiz2)
 	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
 	//mux.HandleFunc("/index", tmp)
 
