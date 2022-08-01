@@ -8,9 +8,10 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"text/template"
+	"html/template"
 )
 
+var selected_charity Return_Charity
 func charity_finder(c string) {
 	var default_sports Return_Charity
 	var default_nature Return_Charity
@@ -80,7 +81,6 @@ func charity_finder(c string) {
 	}
 
 	var response Response
-	var selected_charity Return_Charity
 
 	json.Unmarshal(body, &response)
 	change := false
@@ -111,19 +111,25 @@ func charity_finder(c string) {
 			selected_charity = default_food
 		}
 	}
-	charityHTML, err :=  template.ParseFiles("charities.html") 
+	fmt.Println("2")
+}
+
+func output(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("3")
+	charityHTML, err := template.ParseFiles("charities.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	type HTML_Charity struct{
-		c Return_Charity
+	type HTML_Charity struct {
+		C Return_Charity
 	}
 	var charity HTML_Charity
-	charity.c= selected_charity
-	err = charityHTML.Execute(os.Stdout, &charity)
+	charity.C = selected_charity
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	charityHTML.ExecuteTemplate(w, "charities.html", &charity)
 }
 
 type Response struct {

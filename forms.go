@@ -199,7 +199,9 @@ func main() {
 	mux.HandleFunc("/", SimpleSelectTag)
 	mux.HandleFunc("/quiz", quiz)
 	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
-	//mux.HandleFunc("/index", tmp)
-
+	charity_finder("")
+	mux.HandleFunc("/output", output)
+	mux.HandleFunc("/index", tmp)
 	http.ListenAndServe(":8080", mux)
+
 }
