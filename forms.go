@@ -191,17 +191,19 @@ func sport(w http.ResponseWriter, r *http.Request) {
 
 // }
 
-func tmp(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("here")
-}
+// func tmp(w http.ResponseWriter, r *http.Request) {
+// 	fmt.Println("here")
+// }
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", SimpleSelectTag)
+	mux.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./start_page"))))
+	mux.HandleFunc("/q", SimpleSelectTag)
 	mux.HandleFunc("/quiz", quiz)
+
 	mux.Handle("/index/", http.StripPrefix("/index/", http.FileServer(http.Dir("./static"))))
-	charity_finder("")
-	mux.HandleFunc("/output", output)
-	mux.HandleFunc("/index", tmp)
+	// charity_finder("")
+	// mux.HandleFunc("/output", output)
+	// mux.HandleFunc("/index", tmp)
 	http.ListenAndServe(":8080", mux)
 
 }
